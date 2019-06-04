@@ -1,14 +1,29 @@
 version: 2
+
+# Define the jobs available to the workflow.
 jobs:
-  build:
-    working_directory: ~/terraform-aws
-    # The primary container is an instance of the first image listed. The job's commands run in this container.
-    #docker:
-     # - image: circleci/ubuntu
-    # The secondary container is an instance of the second listed image which is run in a common network where ports exposed on the primary container are available on localhost.
-     # - image: mongo:3.4.4-jessie
+  # Lint the Terraform code.
+  lint:
+    working_directory: /build
+    docker:
+      - image: dwmkerr/terraform-ci:0.1.0
     steps:
       - checkout
-     # - run:
-      #    name: Update npm
-      #    command: 'sudo npm install -g npm@latest'
+      # Init Terraform.
+      - run: terraform init && terraform get
+      - run:
+          name: Terraform Lint
+          command: make lint
+      # We do not yet run any additional steps, but when we do it is important
+      # to persist terraform state in the workspace.
+      - persist_to_workspace:
+          root: /build
+          paths:
+            - .terraform
+
+# The workflow simply runs the lint job.
+workflows:
+  version: 2
+  test:
+    jobs:
+- lint
