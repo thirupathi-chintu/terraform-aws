@@ -12,7 +12,8 @@ jobs:
             mkdir project
             cd project
       - run:
-           
+           name: dir
+           command: ls
 
       
           
