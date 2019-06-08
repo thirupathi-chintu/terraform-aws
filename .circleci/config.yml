@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run: 
           command: |
-            cd project
+            cd ~/project
             sudo apt-get install terraform
       
           
