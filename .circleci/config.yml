@@ -18,7 +18,7 @@ jobs:
              ls
              cd test
              bash wel.sh
-        - run:
+      - run:
             name: terraform init
             command: terraform init
             
