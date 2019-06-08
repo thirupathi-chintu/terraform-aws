@@ -16,7 +16,9 @@ jobs:
           command: ls
       - run:
           name: terraform install
-          command: terraform init
+          command: |
+            apt install terraform
+            terraform init
 
       
           
