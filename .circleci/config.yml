@@ -7,9 +7,9 @@ jobs:
     steps:
       - checkout
       - run: 
+          name: sample
           command: |
-            cd project
-            terraform init
+            cd home
 
       
           
