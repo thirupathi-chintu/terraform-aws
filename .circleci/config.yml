@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: ubuntu
-        working_directory: ~/example
+    working_directory: ~/project
     steps:
       - checkout
       - run: 
