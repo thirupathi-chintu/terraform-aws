@@ -1,13 +1,13 @@
 version: 2
 
-terraform: &terraform
+terraform: &ubuntu
   docker:
-    - image: hashicorp/terraform:0.12.0
-  working_directory: /tmp/workspace/terraform
+    - image: ubuntu
+  working_directory: ~/
 
 jobs:
   validate:
-    <<: *terraform
+    <<: *ubuntu
     steps:
       - checkout
 #      - run:
