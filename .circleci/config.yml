@@ -1,7 +1,13 @@
 version: 2.1
-orbs:
-    hello: circleci/hello-build@0.0.5
-workflows:
-    "Hello Workflow":
-        jobs:
-          - hello/hello-build
+jobs:
+  build:
+    docker:
+      - image: ubuntu
+    steps:
+      - checkout
+      - run:
+          name: "Testing"
+          shell: /bin/sh
+          command: |
+            cd /tmp
+
