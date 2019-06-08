@@ -1,30 +1,13 @@
 version: 2.1
-references:
-
-base_image: &base_image
-  ubuntu
-
-working_directory: &working_directory
-  ~/test
-
-default_config: &default_config
-  docker:
-    - image: *base_image
-  working_directory: *working_directory
-  environment:
-BASH_ENV: /root/.bashrc
-
 jobs:
   build:
-    <<: *default_config
+    docker:
+      - image: ubuntu
     steps:
       - checkout
       - run: 
-        name: terraform init
-        command: |
-          mkdir terra
-          cd terra
-          terraform init
-
+          command: |
+            cd project
+            sudo apt-get install terraform
       
           
