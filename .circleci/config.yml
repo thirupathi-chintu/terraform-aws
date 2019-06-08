@@ -13,8 +13,8 @@ jobs:
       - run:
           name: terraform install
           command: |
-          cd home
-          ls
+             cd home
+             ls
 # #      - run:
 # #          name: Add github.com to ~/.ssh/known_hosts
 # #          command: mkdir ~/.ssh && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
