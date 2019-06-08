@@ -3,11 +3,16 @@ jobs:
   build:
     docker:
       - image: ubuntu
+        working_directory: ~/example
     steps:
       - checkout
-      - run:
-          name: "Testing"
-          shell: /bin/sh
-          command: |
-            cd /tmp
+      - run: 
+        name: terraform init
+        command: |
+          source $BASH_ENV
+          mkdir terra
+          cd terra
+          terraform init
 
+      
+          
