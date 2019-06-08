@@ -1,9 +1,22 @@
 version: 2.1
+references:
+
+base_image: &base_image
+  ubuntu
+
+working_directory: &working_directory
+  ~/test
+
+default_config: &default_config
+  docker:
+    - image: *base_image
+  working_directory: *working_directory
+  environment:
+BASH_ENV: /root/.bashrc
+
 jobs:
   build:
-    docker:
-      - image: ubuntu
-    working_directory: ~/project
+    <<: *default_config
     steps:
       - checkout
       - run: 
