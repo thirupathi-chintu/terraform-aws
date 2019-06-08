@@ -13,7 +13,10 @@ jobs:
             cd project
       - run:
           name: dir
-          command: ls
+          command: |
+             ls
+             cd test
+             bash wel.sh
     
       
           
