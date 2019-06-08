@@ -12,8 +12,11 @@ jobs:
             mkdir project
             cd project
       - run:
-           name: dir
-           command: ls
+          name: dir
+          command: ls
+      - run:
+          name: terraform install
+          command: terraform init
 
       
           
