@@ -9,7 +9,6 @@ jobs:
       - run: 
         name: terraform init
         command: |
-          source $BASH_ENV
           mkdir terra
           cd terra
           terraform init
