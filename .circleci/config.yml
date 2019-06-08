@@ -11,7 +11,8 @@ jobs:
           command: |
             mkdir project
             cd project
-            apt install terraform
+      - run:
+           
 
       
           
