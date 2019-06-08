@@ -10,6 +10,7 @@ jobs:
           name: sample
           command: |
             mkdir project
+            cd project
       - run:
           name: dir
           command: ls
