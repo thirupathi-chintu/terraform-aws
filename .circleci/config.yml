@@ -9,7 +9,8 @@ jobs:
       - run: 
           name: sample
           command: |
-            cd home
+            mkdir project
+            cd project
 
       
           
