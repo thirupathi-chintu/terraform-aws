@@ -12,7 +12,7 @@ jobs:
       - checkout
       - run:
           name: terraform install
-          command: mkdir ~/thiru && cd thiru
+          command: mkdir ~/thiru
 # #      - run:
 # #          name: Add github.com to ~/.ssh/known_hosts
 # #          command: mkdir ~/.ssh && ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
