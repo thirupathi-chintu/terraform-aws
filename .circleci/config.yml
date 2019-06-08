@@ -3,7 +3,7 @@ version: 2
 terraform: &ubuntu
   docker:
     - image: ubuntu
-  working_directory: ~/
+  working_directory: ~/home/
 
 jobs:
   validate:
