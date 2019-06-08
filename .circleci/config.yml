@@ -1,12 +1,15 @@
 version: 2.1
 jobs:
   build:
-     docker:
-    - image: ubuntu
-  working_directory: ~/home
+    docker:
+     - image: ubuntu
+    working_directory: ~/home
     steps:
       - checkout
       - run: 
           command: |
             cd project
-            terraform
+            terraform init
+
+      
+          
