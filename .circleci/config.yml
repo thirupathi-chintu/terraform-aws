@@ -3,7 +3,6 @@ jobs:
   build:
     docker:
      - image: ubuntu
-     - image: hashicorp/terraform:light
     working_directory: ~/home
     steps:
       - checkout
@@ -14,10 +13,6 @@ jobs:
       - run:
           name: dir
           command: ls
-      - run:
-          name: terraform install
-          command: |
-            terraform init
-
+    
       
           
